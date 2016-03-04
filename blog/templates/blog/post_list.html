@@ -6,15 +6,12 @@
     <div>
       <h1><a href="">Ju@nk@ Bl06</a></h1>
     </div>
-    <div>
-      <p>published: 14.06.2015, 14:22</p>
-      <h2><a href="">Mi primer post</a></h2>
-      <p>Aqui empieza</p>
-    </div>
-    <div>
-      <p>published: 14.01.2016, 14:22</p>
-      <h2><a href="">Mi segundo post</a></h2>
-      <p>Aqui empieza</p>
-    </div>
+    {% for post in posts %}
+      <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaks }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
